@@ -1109,6 +1109,8 @@ impl IsoManager {
             cis.iso_data_path_p_to_c = Some(IsoDataPath::Hci);
         }
 
+        std::thread::sleep(std::time::Duration::from_millis(100));
+
         self.send_hci_event(command_complete(hci::ErrorCode::Success))
     }
 
